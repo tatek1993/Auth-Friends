@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Card, Button, CardHeader, CardFooter, CardBody,
+    CardTitle, CardText, Container, Row } from 'reactstrap';
+import styled from 'styled-components/macro';
+
 import axiosWithAuth from '../utils/axiosWithAuth';
 import FriendsForm from './FriendsForm';
+
 
 const FriendsList = () => {
 
@@ -16,16 +21,22 @@ const FriendsList = () => {
     }, []);
 
     return (
-        <div className="friends-list">
+        <Container className="friends-list">
+            <Row>
             {friends.map(friend => (
-                <div className="friend-container" key={friend.id}> 
-                    <h3>{friend.name}</h3>
-                    <p>{friend.age}</p>
-                    <p>{friend.email}</p>
-                </div>   
+                <Card className="friend-container" key={friend.id}>
+                    <CardHeader>{friend.name}</CardHeader>
+                    <CardBody>
+                        <CardTitle>{friend.age}</CardTitle>
+                        <CardText>{friend.email}</CardText>
+                    </CardBody>
+                </Card>  
             ))}
-            <FriendsForm setFriends={setFriends} />
-        </div>
+            </Row>
+            <Row>
+               <FriendsForm setFriends={setFriends} /> 
+            </Row>
+        </Container>
     )
 
 }

@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
 
 import axiosWithAuth from '../utils/axiosWithAuth';
 
@@ -27,30 +29,42 @@ const FriendsForm = props => {
       
   return (
     <div className="friends-form">
-      <form onSubmit={event => handleSubmit(event)}>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          onChange={event => handleChange(event)}
-        />
-        <label htmlFor="age">Age:</label>
-        <input
-          id="age"
-          type="number"
-          name="age"
-          onChange={event => handleChange(event)}
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          id="email"
-          type="text"
-          name="email"
-          onChange={event => handleChange(event)}
-        />
-        <button>Submit!</button>
-      </form>
+        <Form inline onSubmit={event => handleSubmit(event)}>
+            <FormGroup>
+                <label htmlFor="name" hidden>Name</label>
+                <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                onChange={event => handleChange(event)}
+                />
+            </FormGroup>
+            {' '}
+            <FormGroup>
+                <label htmlFor="age" hidden>Age</label>
+                <input
+                id="age"
+                type="number"
+                name="age"
+                placeholder="Age"
+                onChange={event => handleChange(event)}
+                />
+            </FormGroup>
+            {' '}
+            <FormGroup>
+                <label htmlFor="email" hidden>Email</label>
+                <input
+                id="email"
+                type="text"
+                name="email"
+                placeholder="Email"
+                onChange={event => handleChange(event)}
+                />
+            </FormGroup>
+            {' '}
+            <Button>Submit</Button>
+        </Form>
     </div>
   );
       
