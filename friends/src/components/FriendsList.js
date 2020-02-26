@@ -12,7 +12,7 @@ const PaddedDiv = styled.div `
     background-color: #474647;
     border-radius: 10px;
     color: white;
-    border: 5px dotted red;
+    border: 5px dotted #EEB902;
     text-align: center
 `
 
@@ -21,7 +21,7 @@ const CardHeaderStyle = styled.div `
     color: white;
     font-size: 1.5rem;
     padding: 1%;
-    border-bottom: 3px dotted #EEB902;
+    border-bottom: 3px dotted red;
 
 `
 const CardTextStyle = styled.div `
